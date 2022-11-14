@@ -22,10 +22,12 @@ export default function Schedule() {
         return Object.keys(res).map((key) => {
             const list = res[key]
             return (
-                <div>
+                <div key={key}>
                     <h5>{key}</h5>
                     {list.map((ele) => (
-                        <Button>{ele.ngayChieuGioChieu.slice(11, 16)}</Button>
+                        <Button key={ele.ngayChieuGioChieu}>
+                            {ele.ngayChieuGioChieu.slice(11, 16)}
+                        </Button>
                     ))}
                     <hr />
                 </div>
